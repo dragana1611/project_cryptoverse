@@ -11,7 +11,8 @@ import { Cryptocurrencies, News } from "../components";
 const { Title } = Typography;
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery(10);
+  const { data, isFetching } = useGetCryptosQuery(100);
+  console.log("data= ", data);
   const globalStats = data?.data?.stats;
 
   if (isFetching) return "Loading...";//<Loader />
@@ -51,6 +52,12 @@ const Homepage = () => {
             <Statistic
               title={"Total Markets"}
               value={millify(globalStats.totalMarkets)}
+            />
+          </Col>
+          <Col span={12}>
+            <Statistic
+              title={"Total Coins"}
+              value={globalStats.totalCoins}
             />
           </Col>
         </Row>
