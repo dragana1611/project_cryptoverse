@@ -26,8 +26,9 @@ import { message } from "antd";
 const cryptoApiHeaders = {
   // 'X-RapidAPI-Host': RAPIDAPI_HOST,
   "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-  "X-RapidAPI-Key": "b1d57f69b3mshadfcecfc9e489a6p14b18cjsn87ec366e56b2",
-};  
+  // "X-RapidAPI-Key": "b1d57f69b3mshadfcecfc9e489a6p14b18cjsn87ec366e56b2",
+  "X-RapidAPI-Key": "b0e5fdedf1msh31670962ccd7408p140db3jsne4f802e641e3",
+};
 
 // const baseUrl = CRYPTO_API_URL;
 const baseUrl = "https://coinranking1.p.rapidapi.com";
