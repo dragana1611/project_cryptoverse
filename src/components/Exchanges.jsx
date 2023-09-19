@@ -6,23 +6,35 @@ import HTMLReactParser from "html-react-parser";
 import { useGetExchangesQuery } from "../services/cryptoExchangesApi";
 import Loader from "./Loader";
 
-const { Text } = Typography;
+const { Title, Text } = Typography;
 const { Panel } = Collapse;
 
 const Exchanges = () => {
   const { data: exchangesData, isFetching } = useGetExchangesQuery();
 
   if (isFetching) return <Loader />;
-  
+
   return (
     <>
-      <Row gutter={[16, 16]}>
-        <Col span={4}>Name</Col>
-        <Col span={4}>Image</Col>
-        <Col span={4}>Trade Volume 24h</Col>
-        <Col span={4}>Trust Score</Col>
-        <Col span={4}>Trust Score Rank</Col>
-        <Col span={4}>Year Established</Col>
+      <Row gutter={[16, 16]} className='exchange-header-container'>
+        <Col span={4}>
+          <Title level={5}>Name</Title>
+        </Col>
+        <Col span={4}>
+          <Title level={5}>Image</Title>
+        </Col>
+        <Col span={4}>
+          <Title level={5}>Trade Volume 24h</Title>
+        </Col>
+        <Col span={4}>
+          <Title level={5}>Trust Score</Title>
+        </Col>
+        <Col span={4}>
+          <Title level={5}>Trust Score Rank</Title>
+        </Col>
+        <Col span={4}>
+          <Title level={5}>Year Established</Title>
+        </Col>
       </Row>
       <Row gutter={[16, 16]}>
         {exchangesData.map((exchange) => (
@@ -55,12 +67,14 @@ const Exchanges = () => {
                       <Text>{exchange["trust_score_rank"]}</Text>
                     </Col>
                     <Col span={4}>
-                      {exchange["year_established"]}
+                      <Text>{exchange["year_established"] || "unknown"}</Text>
                     </Col>
                   </Row>
                 }
               >
-                {HTMLReactParser(exchange.description || "No description available")}
+                {HTMLReactParser(
+                  exchange.description || "No description available"
+                )}
               </Panel>
             </Collapse>
           </Col>

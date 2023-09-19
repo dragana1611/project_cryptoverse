@@ -367,6 +367,14 @@ a:hover {
   width: 200px !important;
   margin-top: 20px !important;
 }
+.exchange-header-container {
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
 
 .footer {
   background-color: #001529;
