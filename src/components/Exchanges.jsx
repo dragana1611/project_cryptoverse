@@ -21,7 +21,7 @@ const Exchanges = () => {
           <Title level={5}>Name</Title>
         </Col>
         <Col span={4}>
-          <Title level={5}>Image</Title>
+          <Title level={5}></Title>
         </Col>
         <Col span={4}>
           <Title level={5}>Trade Volume 24h</Title>
@@ -58,7 +58,7 @@ const Exchanges = () => {
                       />
                     </Col>
                     <Col span={4}>
-                      {millify(exchange["trade_volume_24h_btc"])}
+                      ${millify(exchange["trade_volume_24h_btc"])}
                     </Col>
                     <Col span={4}>
                       <Text>{exchange["trust_score"]}</Text>
